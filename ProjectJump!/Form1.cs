@@ -2,7 +2,16 @@ namespace ProjectJump_
 {
     public partial class Form1 : Form
     {
-    
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            background.BackColor = Color.Transparent;
+            pbPlayer.Parent = background;
+            enemyOne.Parent = background;
+            coin1.Parent = background;
+            coin2.Parent = background;
+            coin3.Parent = background;
+            key.Parent = background;
+        }
         public Form1()
         {
             InitializeComponent();
@@ -18,6 +27,7 @@ namespace ProjectJump_
         public bool isFalling = false;
         public bool onThisPlatform = false;
         public bool grounded = false;
+        public bool hasKey = false;
 
         public bool moveOtherSide = true;
         public bool moveOtherSideVertical = true;
@@ -25,10 +35,13 @@ namespace ProjectJump_
         public bool rightWallHit = false;
         public bool leftWallHit = false;
 
-        public int playerSpeed = 10;
+        public bool enemyGoingLeft = true;
+
+        public int playerSpeed = 6;
         public int jumpHeight = 25;
         public int gravity = 0;
         public int fallingSpeed = 0;
+        public int enemySpeed = 6;
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -85,6 +98,34 @@ namespace ProjectJump_
                 }
             }
         }*/
+
+        public void gameOver()
+        {
+            pbPlayer.Left = 25;
+            pbPlayer.Top = 548;
+            right = false;
+            left = false;
+            MessageBox.Show("Game over!");
+            hasKey = false;
+            key.Visible = true;
+            enemyOne.Left = 580;
+            timer1.Stop();
+            timer1.Start();
+        }
+
+        public void gameWon()
+        {
+            pbPlayer.Left = 25;
+            pbPlayer.Top = 548;
+            right = false;
+            left = false;
+            MessageBox.Show("Congratulations!!! You won.");
+            hasKey = false;
+            key.Visible = true;
+            enemyOne.Left = 580;
+            timer1.Stop();
+            timer1.Start();
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -149,10 +190,12 @@ namespace ProjectJump_
             if (right && pbPlayer.Right <= this.ClientSize.Width)
             {
                 pbPlayer.Left += playerSpeed;
+                pbPlayer.Image = ProjectJump_.Properties.Resources.characterRight;
             }
             if (left && pbPlayer.Left >= 0)
             {
                 pbPlayer.Left -= playerSpeed;
+                pbPlayer.Image = ProjectJump_.Properties.Resources.characterLeft;
             }
 
             if (up)
@@ -178,15 +221,70 @@ namespace ProjectJump_
 
             if (pbPlayer.Bounds.IntersectsWith(pbDoor.Bounds))
             {
-                //25, 548
-                pbPlayer.Left = 25;
-                pbPlayer.Top = 548;
-                right = false;
-                left = false;
-                MessageBox.Show("Congratulations!!! You won.");
-                timer1.Stop();
-                timer1.Start();
+                if (hasKey)
+                {
+                    gameWon();
+                }
             }
+
+            if (pbPlayer.Bounds.IntersectsWith(enemyOne.Bounds))
+            {
+                gameOver();
+            }
+
+            if (pbPlayer.Bounds.IntersectsWith(key.Bounds))
+            {
+                key.Visible = false;
+                hasKey = true;
+            }
+
+            /*
+                        enemyOne.Left -= enemySpeed;
+
+
+                        if (enemyOne.Left < enemyOnePlatform.Left || enemyOne.Left + enemyOne.Width > enemyOnePlatform.Left + enemyOnePlatform.Width)
+                        {
+                            if (enemyGoingLeft)
+                            {
+                                enemyOne.Image = ProjectJump_.Properties.Resources.enemyLeft;
+                                enemyGoingLeft = false;
+                            }
+                            if (!enemyGoingLeft)
+                            {
+                                enemyOne.Image = ProjectJump_.Properties.Resources.enemyRight;
+                                enemyGoingLeft = true;
+                                enemySpeed = -enemySpeed;
+                            }
+                        }*/
+
+            if (enemyGoingLeft)
+            {
+                enemyOne.Image = ProjectJump_.Properties.Resources.enemyLeft;
+                if (enemyOne.Location.X > enemyOnePlatform.Location.X+5)
+                {
+                    enemyOne.Left -= enemySpeed;
+                }
+
+                else
+                {
+                    enemyGoingLeft = !enemyGoingLeft;
+                }
+
+            }
+            else if (!enemyGoingLeft)
+            {
+                enemyOne.Image = ProjectJump_.Properties.Resources.enemyRight;
+                if (enemyOne.Right < enemyOnePlatform.Right - 5)
+                {
+                    enemyOne.Left += enemySpeed;
+                }
+                else
+                {
+                    enemyGoingLeft = !enemyGoingLeft;
+                }
+            }
+
+            this.Text = enemyGoingLeft.ToString();
 
             foreach (Control x in this.Controls)
             {
