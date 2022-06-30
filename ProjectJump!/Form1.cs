@@ -7,15 +7,15 @@ namespace ProjectJump_
             background.BackColor = Color.Transparent;
             pbPlayer.Parent = background;
             enemyOne.Parent = background;
-            coin1.Parent = background;
-            coin2.Parent = background;
-            coin3.Parent = background;
             key.Parent = background;
+            lblScore.Parent = background;
+            this.Width = 1500;
+            this.Height = 700;
         }
         public Form1()
         {
             InitializeComponent();
-            DoubleBuffered = true;
+            this.DoubleBuffered = true;
             timer1.Interval = 20;
             timer1.Start();
         }
@@ -42,6 +42,7 @@ namespace ProjectJump_
         public int gravity = 0;
         public int fallingSpeed = 0;
         public int enemySpeed = 6;
+        public int scoreCounter = 0;
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -99,13 +100,13 @@ namespace ProjectJump_
             }
         }*/
 
-        public void gameOver()
+        public void gameOver(String str)
         {
             pbPlayer.Left = 25;
             pbPlayer.Top = 548;
             right = false;
             left = false;
-            MessageBox.Show("Game over!");
+            MessageBox.Show(str);
             hasKey = false;
             key.Visible = true;
             enemyOne.Left = 580;
@@ -129,35 +130,37 @@ namespace ProjectJump_
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            /*if (moveOtherSide) {
-                if (movingBlockX.Right <= 530)
+
+            lblScore.Text = "Time: " + scoreCounter;
+
+            if (moveOtherSide)
+            {
+                if (movingBlockX.Right >= 420)
                 {
                     if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
                     {
-                        pbPlayer.Left += playerSpeed;
+                        pbPlayer.Left -= playerSpeed;
                     }
-                    movingBlockX.Left += playerSpeed;
+                    movingBlockX.Left -= playerSpeed;
                 }
-
-                if(movingBlockX.Right == 530)
+                else
                 {
                     moveOtherSide = !moveOtherSide;
                 }
 
             }
-
             else if (!moveOtherSide)
             {
-                if(movingBlockX.Left > 0)
+                if (movingBlockX.Left >= 294)
                 {
-                    movingBlockX.Left -= playerSpeed - 6;
+                    movingBlockX.Left += playerSpeed;
                     if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
                     {
-                        pbPlayer.Left -= playerSpeed;
+                        pbPlayer.Left += playerSpeed;
                     }
                 }
 
-                if(movingBlockX.Left > -15 && movingBlockX.Left < 0)
+                if (movingBlockX.Location.X == 960)
                 {
                     moveOtherSide = !moveOtherSide;
                 }
@@ -166,25 +169,32 @@ namespace ProjectJump_
 
             if (moveOtherSideVertical)
             {
-                if (movingBlockY.Top > 212)
+                if (pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right  && pbPlayer.Bottom > movingBlockY.Top)
                 {
+                    pbPlayer.Top = movingBlockY.Location.Y - pbPlayer.Height;
+                }
 
-                    movingBlockY.Top -= playerSpeed - 6;
+                if (movingBlockY.Top >= 282)
+                {
+                    movingBlockY.Top -= playerSpeed;
                 }
                 else { moveOtherSideVertical = !moveOtherSideVertical; }
-                
-                    
-                
             }
             else if (!moveOtherSideVertical)
             {
-                movingBlockY.Top += playerSpeed - 6;
-                if(movingBlockY.Top == 380)
+
+                if (pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right && pbPlayer.Bottom > movingBlockY.Top)
+                {
+                    pbPlayer.Top = movingBlockY.Location.Y - pbPlayer.Height;
+                }
+
+                movingBlockY.Top += playerSpeed;
+                if (movingBlockY.Location.Y == 410)
                 {
                     moveOtherSideVertical = !moveOtherSideVertical;
                 }
             }
-*/
+
 
 
             if (right && pbPlayer.Right <= this.ClientSize.Width)
@@ -229,7 +239,12 @@ namespace ProjectJump_
 
             if (pbPlayer.Bounds.IntersectsWith(enemyOne.Bounds))
             {
-                gameOver();
+                gameOver("You have been crushed by the great FINKI. GAME OVER!");
+            }
+
+            if (pbPlayer.Bounds.IntersectsWith(lava.Bounds))
+            {
+                gameOver("You tried to swim in lava, dont do that next time!");
             }
 
             if (pbPlayer.Bounds.IntersectsWith(key.Bounds))
@@ -238,28 +253,20 @@ namespace ProjectJump_
                 hasKey = true;
             }
 
-            /*
-                        enemyOne.Left -= enemySpeed;
-
-
-                        if (enemyOne.Left < enemyOnePlatform.Left || enemyOne.Left + enemyOne.Width > enemyOnePlatform.Left + enemyOnePlatform.Width)
-                        {
-                            if (enemyGoingLeft)
-                            {
-                                enemyOne.Image = ProjectJump_.Properties.Resources.enemyLeft;
-                                enemyGoingLeft = false;
-                            }
-                            if (!enemyGoingLeft)
-                            {
-                                enemyOne.Image = ProjectJump_.Properties.Resources.enemyRight;
-                                enemyGoingLeft = true;
-                                enemySpeed = -enemySpeed;
-                            }
-                        }*/
+            /*foreach (Control x in this.Controls)
+            {
+                if(x is PictureBox && (string) x.Tag == "coins")
+                {
+                    if (pbPlayer.Right > x.Left && pbPlayer.Left < pbPlayer.Right && pbPlayer.Top < x.Bottom && pbPlayer.Bottom > x.Top && x.Visible == true)
+                    {
+                        x.Visible = false;
+                        scoreCounter += 1;
+                    }
+                }
+            }*/
 
             if (enemyGoingLeft)
             {
-                enemyOne.Image = ProjectJump_.Properties.Resources.enemyLeft;
                 if (enemyOne.Location.X > enemyOnePlatform.Location.X+5)
                 {
                     enemyOne.Left -= enemySpeed;
@@ -273,7 +280,6 @@ namespace ProjectJump_
             }
             else if (!enemyGoingLeft)
             {
-                enemyOne.Image = ProjectJump_.Properties.Resources.enemyRight;
                 if (enemyOne.Right < enemyOnePlatform.Right - 5)
                 {
                     enemyOne.Left += enemySpeed;
@@ -283,8 +289,6 @@ namespace ProjectJump_
                     enemyGoingLeft = !enemyGoingLeft;
                 }
             }
-
-            this.Text = enemyGoingLeft.ToString();
 
             foreach (Control x in this.Controls)
             {
