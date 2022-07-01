@@ -55,7 +55,11 @@
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.platform1)).BeginInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+>>>>>>> origin/master
             ((System.ComponentModel.ISupportInitialize)(this.enemyOnePlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -87,6 +91,7 @@
             // 
             // platform1
             // 
+<<<<<<< HEAD
             this.platform1.BackColor = System.Drawing.Color.Transparent;
             this.platform1.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
             this.platform1.Location = new System.Drawing.Point(160, 523);
@@ -95,6 +100,16 @@
             this.platform1.TabIndex = 9;
             this.platform1.TabStop = false;
             this.platform1.Tag = "platform";
+=======
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
+            this.pictureBox8.Location = new System.Drawing.Point(160, 523);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(125, 34);
+            this.pictureBox8.TabIndex = 9;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Tag = "platform";
+>>>>>>> origin/master
             // 
             // enemyOnePlatform
             // 
@@ -144,7 +159,11 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::ProjectJump_.Properties.Resources.platform;
+<<<<<<< HEAD
             this.pictureBox3.Location = new System.Drawing.Point(732, 436);
+=======
+            this.pictureBox3.Location = new System.Drawing.Point(705, 410);
+>>>>>>> origin/master
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,7 +284,11 @@
             this.lblScore.AutoSize = true;
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Source Serif Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+<<<<<<< HEAD
             this.lblScore.Location = new System.Drawing.Point(0, 0);
+=======
+            this.lblScore.Location = new System.Drawing.Point(2, 0);
+>>>>>>> origin/master
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(80, 28);
             this.lblScore.TabIndex = 20;
@@ -361,7 +384,11 @@
             this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
+<<<<<<< HEAD
             this.Controls.Add(this.platform1);
+=======
+            this.Controls.Add(this.pictureBox8);
+>>>>>>> origin/master
             this.Controls.Add(this.enemyOnePlatform);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox6);

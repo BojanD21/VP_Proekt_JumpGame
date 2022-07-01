@@ -10,9 +10,14 @@ namespace ProjectJump_
             enemyOne.Parent = background;
             key.Parent = background;
             lblScore.Parent = background;
+<<<<<<< HEAD
             pbPlayer.Height = 60;
             pbPlayer.Width = 40;
 
+=======
+            this.Width = 1500;
+            this.Height = 700;
+>>>>>>> origin/master
         }
         public Form1()
         {
@@ -138,8 +143,11 @@ namespace ProjectJump_
 
             lblScore.Text = "Time: " + scoreCounter;
 
+<<<<<<< HEAD
             
 
+=======
+>>>>>>> origin/master
             if (moveOtherSide)
             {
                 if (movingBlockX.Right >= 420)
@@ -147,6 +155,7 @@ namespace ProjectJump_
 
                     if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
                     {
+<<<<<<< HEAD
                         foreach (Control x in this.Controls)
                         {
                             if (pbPlayer.Right >= x.Left - 10 && pbPlayer.Right <= x.Left + 10 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 13 && pbPlayer.Location.Y < x.Bottom)
@@ -178,6 +187,8 @@ namespace ProjectJump_
                                 break;
                             }
                         }
+=======
+>>>>>>> origin/master
                         pbPlayer.Left -= playerSpeed;
                     }
                     movingBlockX.Left -= playerSpeed;
@@ -192,6 +203,7 @@ namespace ProjectJump_
             {
                 if (movingBlockX.Left >= 294)
                 {
+<<<<<<< HEAD
 
                     if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
                     {
@@ -226,6 +238,11 @@ namespace ProjectJump_
                                 break;
                             }
                         }
+=======
+                    movingBlockX.Left += playerSpeed;
+                    if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
+                    {
+>>>>>>> origin/master
                         pbPlayer.Left += playerSpeed;
                     }
                     movingBlockX.Left += playerSpeed;
@@ -240,6 +257,7 @@ namespace ProjectJump_
 
             if (moveOtherSideVertical)
             {
+<<<<<<< HEAD
                 if (movingBlockY.Top >= 282)
                 {
                     if (pbPlayer.Bottom == movingBlockY.Top && pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right)
@@ -248,11 +266,22 @@ namespace ProjectJump_
                     }
                     movingBlockY.Top -= playerSpeed;
 
+=======
+                if (pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right  && pbPlayer.Bottom > movingBlockY.Top)
+                {
+                    pbPlayer.Top = movingBlockY.Location.Y - pbPlayer.Height;
+                }
+
+                if (movingBlockY.Top >= 282)
+                {
+                    movingBlockY.Top -= playerSpeed;
+>>>>>>> origin/master
                 }
                 else { moveOtherSideVertical = !moveOtherSideVertical; }
             }
             else if (!moveOtherSideVertical)
             {
+<<<<<<< HEAD
                 if (pbPlayer.Bottom == movingBlockY.Top && pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right)
                 {
                     pbPlayer.Top += playerSpeed;
@@ -260,6 +289,16 @@ namespace ProjectJump_
                 movingBlockY.Top += playerSpeed;
                 
                 if (movingBlockY.Location.Y >= 410)
+=======
+
+                if (pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right && pbPlayer.Bottom > movingBlockY.Top)
+                {
+                    pbPlayer.Top = movingBlockY.Location.Y - pbPlayer.Height;
+                }
+
+                movingBlockY.Top += playerSpeed;
+                if (movingBlockY.Location.Y == 410)
+>>>>>>> origin/master
                 {
                     moveOtherSideVertical = !moveOtherSideVertical;
                 }
