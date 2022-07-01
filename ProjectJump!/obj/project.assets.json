@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\School\\VS-VisualProgramming\\Proekt\\ProektFinalGameJump!\\ProjectJump!\\ProjectJump!.csproj",
+      "projectUniqueName": "C:\\School\\VS-VisualProgramming\\Proekt\\ProektFinalGameJump!\\VP_Proekt_JumpGame\\ProjectJump!\\ProjectJump!.csproj",
       "projectName": "ProjectJump!",
-      "projectPath": "C:\\School\\VS-VisualProgramming\\Proekt\\ProektFinalGameJump!\\ProjectJump!\\ProjectJump!.csproj",
+      "projectPath": "C:\\School\\VS-VisualProgramming\\Proekt\\ProektFinalGameJump!\\VP_Proekt_JumpGame\\ProjectJump!\\ProjectJump!.csproj",
       "packagesPath": "C:\\Users\\38975\\.nuget\\packages\\",
-      "outputPath": "C:\\School\\VS-VisualProgramming\\Proekt\\ProektFinalGameJump!\\ProjectJump!\\obj\\",
+      "outputPath": "C:\\School\\VS-VisualProgramming\\Proekt\\ProektFinalGameJump!\\VP_Proekt_JumpGame\\ProjectJump!\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\38975\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -187,7 +187,7 @@ namespace ProjectJump_
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            
             scoreCounter += 1;
             if(scoreCounter == 50)
             {
