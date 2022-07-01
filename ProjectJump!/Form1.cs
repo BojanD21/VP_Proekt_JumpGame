@@ -5,20 +5,57 @@ namespace ProjectJump_
     {
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Text = "Jump!";
+
             background.BackColor = Color.Transparent;
             pbPlayer.Parent = background;
             enemyOne.Parent = background;
             key.Parent = background;
             lblScore.Parent = background;
-<<<<<<< HEAD
+
             pbPlayer.Height = 60;
             pbPlayer.Width = 40;
+            pbPlayer.Left = 40;
+            pbPlayer.Top = 575;
 
-=======
-            this.Width = 1500;
-            this.Height = 700;
->>>>>>> origin/master
+            background.Dock = DockStyle.Fill;
+            background.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            background.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+            floor.MinimumSize = new Size(247, 62);
+            floor.MaximumSize = new Size(247, 1500);
+
+            floor.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            lava.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+
+
+            setSizes(platform1, 125, 34);
+            setSizes(enemyOnePlatform, 282, 40);
+            setSizes(platform3, 40, 40);
+            setSizes(platform4, 40, 40);
+            setSizes(platform5, 40, 40);
+            setSizes(platform6, 125, 34);
+            setSizes(platform7, 125, 35);
+
+            setSizes(skyPlatform1, 125, 34);
+            setSizes(skyPlatform2, 125, 34);
+            setSizes(skyPlatform3, 40, 40);
+            setSizes(skyDoorPlatform, 125, 34);
+
+            setSizes(wall1, 32, 59);
+            setSizes(wall2, 32, 100);
+            setSizes(wall3, 32, 33);
+            setSizes(wall4, 32, 59);
         }
+
+        public void setSizes(Control x, int width, int height)
+        {
+            x.MaximumSize = new Size(width, height);
+            //x.MinimumSize = new Size(width, height);
+            x.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -44,6 +81,7 @@ namespace ProjectJump_
         public bool leftWallHit = false;
 
         public bool enemyGoingLeft = true;
+        public bool upIsDown = false;
 
         public int playerSpeed = 6;
         public int jumpHeight = 25;
@@ -51,6 +89,7 @@ namespace ProjectJump_
         public int fallingSpeed = 0;
         public int enemySpeed = 6;
         public int scoreCounter = 0;
+        public int time = 0;
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -68,9 +107,18 @@ namespace ProjectJump_
                 if (e.KeyCode == Keys.Up)
                 {
                     up = true;
+                    upIsDown = true;
 
                     gravity = jumpHeight;
                     grounded = false;
+                }
+            }
+
+            if(up == true)
+            {
+                if(e.KeyCode == Keys.Up)
+                {
+                    upIsDown = true;
                 }
             }
 
@@ -85,32 +133,17 @@ namespace ProjectJump_
             {
                 right = false;
             }
-        }
-
-        /*private void moveGameElements(string direction)
-        {
-            foreach(Control x in this.Controls)
+            if(e.KeyCode == Keys.Up)
             {
-                if(x is PictureBox)
-                {
-                    if((string) x.Tag == "platform" || (string) x.Tag == "door")
-                    {
-                        if(direction == "forward")
-                        {
-                            x.Left += backgroundMoveSpeed;
-                        }
-                        if(direction == "backwards")
-                        {
-                            x.Left -= backgroundMoveSpeed;
-                        }
-                    }
-                }
+                upIsDown = false;
             }
-        }*/
+        }
 
         public void gameOver(String str)
         {
-            pbPlayer.Left = floor.Left + 50;//25;
+            timer1.Stop();
+            upIsDown = false;
+            pbPlayer.Left = floor.Left + 50;
             pbPlayer.Top = floor.Top - pbPlayer.Height - 20;
             right = false;
             left = false;
@@ -119,192 +152,49 @@ namespace ProjectJump_
             shownNoKeyMessage = true;
             key.Visible = true;
             enemyOne.Left = 580;
-            timer1.Stop();
+            pbPlayer.Left = 40;
+            pbPlayer.Top = 575;
+            scoreCounter = 0;
+            time = 0; 
+            lblScore.Text = "Time: " + time;
+            gravity = 0;
             timer1.Start();
+            up = true;
         }
 
         public void gameWon()
         {
-            pbPlayer.Left = floor.Left + 50;//25;
+            timer1.Stop();
+            upIsDown = false;
+            pbPlayer.Left = floor.Left + 50;
             pbPlayer.Top = floor.Top - pbPlayer.Height - 20;
             right = false;
             left = false;
-            MessageBox.Show("Congratulations!!! You won.");
+            MessageBox.Show("Congratulations!!! You won in " + time + " seconds.");
             hasKey = false;
             shownNoKeyMessage = true;
             key.Visible = true;
             enemyOne.Left = 580;
-            timer1.Stop();
+            pbPlayer.Left = 40;
+            pbPlayer.Top = 575;
+            scoreCounter = 0;
+            time = 0;
+            lblScore.Text = "Time: " + time;
+            gravity = 0;
             timer1.Start();
+            up = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            lblScore.Text = "Time: " + scoreCounter;
-
-<<<<<<< HEAD
-            
-
-=======
->>>>>>> origin/master
-            if (moveOtherSide)
+            scoreCounter += 1;
+            if(scoreCounter == 50)
             {
-                if (movingBlockX.Right >= 420)
-                {
-
-                    if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
-                    {
-<<<<<<< HEAD
-                        foreach (Control x in this.Controls)
-                        {
-                            if (pbPlayer.Right >= x.Left - 10 && pbPlayer.Right <= x.Left + 10 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 13 && pbPlayer.Location.Y < x.Bottom)
-                            {
-
-                                rightWallHit = true;
-                            }
-
-                            if (pbPlayer.Left >= x.Right - 10 && pbPlayer.Left <= x.Right + 10 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 3 && pbPlayer.Location.Y < x.Bottom)
-                            {
-
-
-                                leftWallHit = true;
-                            }
-                            if (leftWallHit)
-                            {
-                                leftWallHit = false;
-                                pbPlayer.Left = x.Right + 3;
-                                up = true;
-                                gravity = 0;
-                                break;
-                            }
-                            if (rightWallHit)
-                            {
-                                rightWallHit = false;
-                                pbPlayer.Left = x.Left - pbPlayer.Width - 3;
-                                up = true;
-                                gravity = 0;
-                                break;
-                            }
-                        }
-=======
->>>>>>> origin/master
-                        pbPlayer.Left -= playerSpeed;
-                    }
-                    movingBlockX.Left -= playerSpeed;
-                }
-                else
-                {
-                    moveOtherSide = !moveOtherSide;
-                }
-
+                scoreCounter = 0;
+                time++;
+                lblScore.Text = "Time: " + time;
             }
-            else if (!moveOtherSide)
-            {
-                if (movingBlockX.Left >= 294)
-                {
-<<<<<<< HEAD
-
-                    if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
-                    {
-                        foreach (Control x in this.Controls)
-                        {
-                            if (pbPlayer.Right >= x.Left - 10 && pbPlayer.Right <= x.Left + 10 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 13 && pbPlayer.Location.Y < x.Bottom)
-                            {
-
-                                rightWallHit = true;
-                            }
-
-                            if (pbPlayer.Left >= x.Right - 3 && pbPlayer.Left <= x.Right + 3 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 3 && pbPlayer.Location.Y < x.Bottom)
-                            {
-
-
-                                leftWallHit = true;
-                            }
-                            if (leftWallHit)
-                            {
-                                leftWallHit = false;
-                                pbPlayer.Left = x.Right + 3;
-                                up = true;
-                                gravity = 0;
-                                break;
-                            }
-                            if (rightWallHit)
-                            {
-                                rightWallHit = false;
-                                pbPlayer.Left = x.Left - pbPlayer.Width - 3;
-                                up = true;
-                                gravity = 0;
-                                break;
-                            }
-                        }
-=======
-                    movingBlockX.Left += playerSpeed;
-                    if (pbPlayer.Right >= movingBlockX.Left && pbPlayer.Left <= movingBlockX.Right && pbPlayer.Bottom == movingBlockX.Top)
-                    {
->>>>>>> origin/master
-                        pbPlayer.Left += playerSpeed;
-                    }
-                    movingBlockX.Left += playerSpeed;
-                }
-
-                if (movingBlockX.Location.X == 960)
-                {
-                    moveOtherSide = !moveOtherSide;
-                }
-
-            }
-
-            if (moveOtherSideVertical)
-            {
-<<<<<<< HEAD
-                if (movingBlockY.Top >= 282)
-                {
-                    if (pbPlayer.Bottom == movingBlockY.Top && pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right)
-                    {
-                        pbPlayer.Top -= playerSpeed;
-                    }
-                    movingBlockY.Top -= playerSpeed;
-
-=======
-                if (pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right  && pbPlayer.Bottom > movingBlockY.Top)
-                {
-                    pbPlayer.Top = movingBlockY.Location.Y - pbPlayer.Height;
-                }
-
-                if (movingBlockY.Top >= 282)
-                {
-                    movingBlockY.Top -= playerSpeed;
->>>>>>> origin/master
-                }
-                else { moveOtherSideVertical = !moveOtherSideVertical; }
-            }
-            else if (!moveOtherSideVertical)
-            {
-<<<<<<< HEAD
-                if (pbPlayer.Bottom == movingBlockY.Top && pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right)
-                {
-                    pbPlayer.Top += playerSpeed;
-                }
-                movingBlockY.Top += playerSpeed;
-                
-                if (movingBlockY.Location.Y >= 410)
-=======
-
-                if (pbPlayer.Right > movingBlockY.Left && pbPlayer.Left < movingBlockY.Right && pbPlayer.Bottom > movingBlockY.Top)
-                {
-                    pbPlayer.Top = movingBlockY.Location.Y - pbPlayer.Height;
-                }
-
-                movingBlockY.Top += playerSpeed;
-                if (movingBlockY.Location.Y == 410)
->>>>>>> origin/master
-                {
-                    moveOtherSideVertical = !moveOtherSideVertical;
-                }
-            }
-
-
 
             if (right && pbPlayer.Right <= this.ClientSize.Width)
             {
@@ -327,16 +217,6 @@ namespace ProjectJump_
                 }
             }
 
-            /*if(left == true && background.Left < 0)
-            {
-                background.Left += backgroundMoveSpeed;
-                moveGameElements("forward");
-            }
-            if(right == true && background.Left > -800)
-            {
-                background.Left -= backgroundMoveSpeed;
-                moveGameElements("backwards");
-            }*/
 
             if (pbPlayer.Bounds.IntersectsWith(pbDoor.Bounds))
             {
@@ -372,21 +252,135 @@ namespace ProjectJump_
                 hasKey = true;
             }
 
-            /*foreach (Control x in this.Controls)
+            if (moveOtherSide)
             {
-                if(x is PictureBox && (string) x.Tag == "coins")
+                if (skyPlatform2.Right >= wall4.Left)
                 {
-                    if (pbPlayer.Right > x.Left && pbPlayer.Left < pbPlayer.Right && pbPlayer.Top < x.Bottom && pbPlayer.Bottom > x.Top && x.Visible == true)
+
+                    if (pbPlayer.Right >= skyPlatform2.Left && pbPlayer.Left <= skyPlatform2.Right && pbPlayer.Bottom == skyPlatform2.Top)
                     {
-                        x.Visible = false;
-                        scoreCounter += 1;
+                        foreach (Control x in this.Controls)
+                        {
+                            if (pbPlayer.Right >= x.Left - 10 && pbPlayer.Right <= x.Left + 10 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 13 && pbPlayer.Location.Y < x.Bottom)
+                            {
+
+                                rightWallHit = true;
+                            }
+
+                            if (pbPlayer.Left >= x.Right - 10 && pbPlayer.Left <= x.Right + 10 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 3 && pbPlayer.Location.Y < x.Bottom)
+                            {
+
+
+                                leftWallHit = true;
+                            }
+                            if (leftWallHit)
+                            {
+                                leftWallHit = false;
+                                pbPlayer.Left = x.Right + 3;
+                                up = true;
+                                gravity = 0;
+                                break;
+                            }
+                            if (rightWallHit)
+                            {
+                                rightWallHit = false;
+                                pbPlayer.Left = x.Left - pbPlayer.Width - 3;
+                                up = true;
+                                gravity = 0;
+                                break;
+                            }
+                        }
+                        pbPlayer.Left -= playerSpeed;
                     }
+                    skyPlatform2.Left -= playerSpeed;
                 }
-            }*/
+                else
+                {
+                    moveOtherSide = !moveOtherSide;
+                }
+
+            }
+            else if (!moveOtherSide)
+            {
+                if (skyPlatform2.Right <= wall4.Left) { skyPlatform2.Left += playerSpeed; }
+                if (skyPlatform2.Right >= wall4.Left)
+                {
+
+                    if (pbPlayer.Right >= skyPlatform2.Left && pbPlayer.Left <= skyPlatform2.Right && pbPlayer.Bottom == skyPlatform2.Top)
+                    {
+                        foreach (Control x in this.Controls)
+                        {
+                            if (pbPlayer.Right >= x.Left - 10 && pbPlayer.Right <= x.Left + 10 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 13 && pbPlayer.Location.Y < x.Bottom)
+                            {
+
+                                rightWallHit = true;
+                            }
+
+                            if (pbPlayer.Left >= x.Right - 3 && pbPlayer.Left <= x.Right + 3 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 3 && pbPlayer.Location.Y < x.Bottom)
+                            {
+
+
+                                leftWallHit = true;
+                            }
+                            if (leftWallHit)
+                            {
+                                leftWallHit = false;
+                                pbPlayer.Left = x.Right + 3;
+                                up = true;
+                                gravity = 0;
+                                break;
+                            }
+                            if (rightWallHit)
+                            {
+                                rightWallHit = false;
+                                pbPlayer.Left = x.Left - pbPlayer.Width - 3;
+                                up = true;
+                                gravity = 0;
+                                break;
+                            }
+                        }
+                        pbPlayer.Left += playerSpeed;
+                    }
+                    skyPlatform2.Left += playerSpeed;
+                }
+
+                if (skyPlatform2.Right >= skyPlatform1.Left)
+                {
+                    moveOtherSide = !moveOtherSide;
+                }
+
+            }
+
+            if (moveOtherSideVertical)
+            {
+                if (platform7.Top >= skyPlatform1.Bottom)
+                {
+                    if (pbPlayer.Bottom == platform7.Top && pbPlayer.Right > platform7.Left && pbPlayer.Left < platform7.Right)
+                    {
+                        pbPlayer.Top -= playerSpeed;
+                    }
+                    platform7.Top -= playerSpeed;
+
+                }
+                else { moveOtherSideVertical = !moveOtherSideVertical; }
+            }
+            else if (!moveOtherSideVertical)
+            {
+                if (pbPlayer.Bottom == platform7.Top && pbPlayer.Right > platform7.Left && pbPlayer.Left < platform7.Right)
+                {
+                    pbPlayer.Top += playerSpeed;
+                }
+                platform7.Top += playerSpeed;
+
+                if (platform7.Bottom >= platform5.Top)
+                {
+                    moveOtherSideVertical = !moveOtherSideVertical;
+                }
+            }
 
             if (enemyGoingLeft)
             {
-                if (enemyOne.Location.X > enemyOnePlatform.Location.X+5)
+                if (enemyOne.Location.X > enemyOnePlatform.Location.X + 5)
                 {
                     enemyOne.Left -= enemySpeed;
                 }
@@ -411,7 +405,7 @@ namespace ProjectJump_
 
             foreach (Control x in this.Controls)
             {
-                
+
                 if (x is PictureBox && (string)x.Tag == "platform")
                 {
 
@@ -424,11 +418,18 @@ namespace ProjectJump_
 
                     if (left && pbPlayer.Left >= x.Right - 3 && pbPlayer.Left <= x.Right + 3 && pbPlayer.Location.Y + pbPlayer.Height > x.Top + 3 && pbPlayer.Location.Y < x.Bottom)
                     {
-
-
                         leftWallHit = true;
                     }
-
+                    if (leftWallHit)
+                    {
+                        leftWallHit = false;
+                        pbPlayer.Left = x.Right + 6;
+                    }
+                    if (rightWallHit)
+                    {
+                        rightWallHit = false;
+                        pbPlayer.Left = x.Left - pbPlayer.Width - 6;
+                    }
                     if (up)
                     {
 
@@ -436,40 +437,28 @@ namespace ProjectJump_
                         {
                             gravity = -5;
                             up = true;
-
                         }
                         if (gravity <= 0 && pbPlayer.Bottom >= x.Top - 5 && pbPlayer.Bottom <= x.Top + 15 && pbPlayer.Location.X + pbPlayer.Width >= x.Location.X && pbPlayer.Location.X <= x.Location.X + x.Width)
                         {
-                            pbPlayer.Top = x.Location.Y - pbPlayer.Height;
+                            pbPlayer.Top = x.Top - pbPlayer.Height;
+
                             up = false;
                             gravity = jumpHeight;
+                            if (upIsDown)
+                            {
+                                up = true;
+                            }
 
-
+                            break;
                         }
                     }
                     else
                     {
-
-                        if (pbPlayer.Bottom >= x.Top - 5 && pbPlayer.Bottom <= x.Top + 5 && ((left && pbPlayer.Location.X + pbPlayer.Width <= x.Location.X) || (right && pbPlayer.Location.X > x.Location.X + x.Width)))
+                        if (pbPlayer.Bottom == x.Top && ((left && pbPlayer.Location.X + pbPlayer.Width <= x.Location.X) || (right && pbPlayer.Location.X > x.Location.X + x.Width)))
                         {
                             up = true;
                             gravity = 0;
-
                         }
-
-
-                    }
-
-
-                    if (leftWallHit)
-                    {
-                        leftWallHit = false;
-                        pbPlayer.Left = x.Right + 3;
-                    }
-                    if (rightWallHit)
-                    {
-                        rightWallHit = false;
-                        pbPlayer.Left = x.Left - pbPlayer.Width - 3;
                     }
                     x.BringToFront();
                 }

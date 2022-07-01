@@ -33,65 +33,61 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.platform1 = new System.Windows.Forms.PictureBox();
             this.enemyOnePlatform = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.skyPlatform3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.movingBlockY = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.platform7 = new System.Windows.Forms.PictureBox();
+            this.platform3 = new System.Windows.Forms.PictureBox();
             this.pbDoor = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.skyDoorPlatform = new System.Windows.Forms.PictureBox();
             this.pbPlayer = new System.Windows.Forms.PictureBox();
             this.floor = new System.Windows.Forms.PictureBox();
             this.background = new System.Windows.Forms.PictureBox();
             this.key = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.movingBlockX = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.platform6 = new System.Windows.Forms.PictureBox();
+            this.skyPlatform2 = new System.Windows.Forms.PictureBox();
+            this.skyPlatform1 = new System.Windows.Forms.PictureBox();
             this.enemyOne = new System.Windows.Forms.PictureBox();
             this.lblScore = new System.Windows.Forms.Label();
             this.lava = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
+            this.wall2 = new System.Windows.Forms.PictureBox();
+            this.wall3 = new System.Windows.Forms.PictureBox();
+            this.wall4 = new System.Windows.Forms.PictureBox();
+            this.platform4 = new System.Windows.Forms.PictureBox();
+            this.platform5 = new System.Windows.Forms.PictureBox();
+            this.wall1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.platform1)).BeginInit();
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
->>>>>>> origin/master
             ((System.ComponentModel.ISupportInitialize)(this.enemyOnePlatform)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyPlatform3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movingBlockY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyDoorPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.floor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.key)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movingBlockX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyPlatform2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyPlatform1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lava)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
             // 
-            this.timer1.Interval = 10;
+            this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // platform1
             // 
-<<<<<<< HEAD
+            this.platform1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.platform1.BackColor = System.Drawing.Color.Transparent;
             this.platform1.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
             this.platform1.Location = new System.Drawing.Point(160, 523);
@@ -100,16 +96,6 @@
             this.platform1.TabIndex = 9;
             this.platform1.TabStop = false;
             this.platform1.Tag = "platform";
-=======
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
-            this.pictureBox8.Location = new System.Drawing.Point(160, 523);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(125, 34);
-            this.pictureBox8.TabIndex = 9;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Tag = "platform";
->>>>>>> origin/master
             // 
             // enemyOnePlatform
             // 
@@ -122,16 +108,17 @@
             this.enemyOnePlatform.TabStop = false;
             this.enemyOnePlatform.Tag = "platform";
             // 
-            // pictureBox6
+            // skyPlatform3
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
-            this.pictureBox6.Location = new System.Drawing.Point(186, 173);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox6.TabIndex = 11;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Tag = "platform";
+            this.skyPlatform3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.skyPlatform3.BackColor = System.Drawing.Color.Transparent;
+            this.skyPlatform3.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
+            this.skyPlatform3.Location = new System.Drawing.Point(199, 173);
+            this.skyPlatform3.Name = "skyPlatform3";
+            this.skyPlatform3.Size = new System.Drawing.Size(40, 40);
+            this.skyPlatform3.TabIndex = 11;
+            this.skyPlatform3.TabStop = false;
+            this.skyPlatform3.Tag = "platform";
             // 
             // pictureBox5
             // 
@@ -144,32 +131,28 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Tag = "platform";
             // 
-            // movingBlockY
+            // platform7
             // 
-            this.movingBlockY.BackColor = System.Drawing.Color.Transparent;
-            this.movingBlockY.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
-            this.movingBlockY.Location = new System.Drawing.Point(1310, 410);
-            this.movingBlockY.Name = "movingBlockY";
-            this.movingBlockY.Size = new System.Drawing.Size(125, 35);
-            this.movingBlockY.TabIndex = 13;
-            this.movingBlockY.TabStop = false;
-            this.movingBlockY.Tag = "platform";
+            this.platform7.BackColor = System.Drawing.Color.Transparent;
+            this.platform7.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
+            this.platform7.Location = new System.Drawing.Point(1308, 415);
+            this.platform7.Name = "platform7";
+            this.platform7.Size = new System.Drawing.Size(125, 35);
+            this.platform7.TabIndex = 13;
+            this.platform7.TabStop = false;
+            this.platform7.Tag = "platform";
             // 
-            // pictureBox3
+            // platform3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::ProjectJump_.Properties.Resources.platform;
-<<<<<<< HEAD
-            this.pictureBox3.Location = new System.Drawing.Point(732, 436);
-=======
-            this.pictureBox3.Location = new System.Drawing.Point(705, 410);
->>>>>>> origin/master
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "platform";
+            this.platform3.BackColor = System.Drawing.Color.Transparent;
+            this.platform3.Image = global::ProjectJump_.Properties.Resources.platform;
+            this.platform3.Location = new System.Drawing.Point(732, 441);
+            this.platform3.Name = "platform3";
+            this.platform3.Size = new System.Drawing.Size(40, 40);
+            this.platform3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.platform3.TabIndex = 14;
+            this.platform3.TabStop = false;
+            this.platform3.Tag = "platform";
             // 
             // pbDoor
             // 
@@ -182,22 +165,22 @@
             this.pbDoor.TabStop = false;
             this.pbDoor.Tag = "door";
             // 
-            // pictureBox1
+            // skyDoorPlatform
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
-            this.pictureBox1.Location = new System.Drawing.Point(1345, 133);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 34);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "platform";
+            this.skyDoorPlatform.BackColor = System.Drawing.Color.Transparent;
+            this.skyDoorPlatform.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
+            this.skyDoorPlatform.Location = new System.Drawing.Point(1345, 133);
+            this.skyDoorPlatform.Name = "skyDoorPlatform";
+            this.skyDoorPlatform.Size = new System.Drawing.Size(125, 34);
+            this.skyDoorPlatform.TabIndex = 7;
+            this.skyDoorPlatform.TabStop = false;
+            this.skyDoorPlatform.Tag = "platform";
             // 
             // pbPlayer
             // 
             this.pbPlayer.BackColor = System.Drawing.Color.Transparent;
             this.pbPlayer.Image = global::ProjectJump_.Properties.Resources.characterRight;
-            this.pbPlayer.Location = new System.Drawing.Point(32, 575);
+            this.pbPlayer.Location = new System.Drawing.Point(40, 575);
             this.pbPlayer.Name = "pbPlayer";
             this.pbPlayer.Size = new System.Drawing.Size(40, 60);
             this.pbPlayer.TabIndex = 6;
@@ -205,6 +188,7 @@
             // 
             // floor
             // 
+            this.floor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.floor.BackColor = System.Drawing.Color.Transparent;
             this.floor.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
             this.floor.Location = new System.Drawing.Point(-23, 635);
@@ -222,7 +206,7 @@
             this.background.Size = new System.Drawing.Size(1489, 660);
             this.background.TabIndex = 0;
             this.background.TabStop = false;
-            this.background.Tag = "player";
+            this.background.Tag = "";
             // 
             // key
             // 
@@ -235,38 +219,38 @@
             this.key.TabIndex = 18;
             this.key.TabStop = false;
             // 
-            // pictureBox10
+            // platform6
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
-            this.pictureBox10.Location = new System.Drawing.Point(1131, 495);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(125, 34);
-            this.pictureBox10.TabIndex = 11;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Tag = "platform";
+            this.platform6.BackColor = System.Drawing.Color.Transparent;
+            this.platform6.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
+            this.platform6.Location = new System.Drawing.Point(1131, 495);
+            this.platform6.Name = "platform6";
+            this.platform6.Size = new System.Drawing.Size(125, 34);
+            this.platform6.TabIndex = 11;
+            this.platform6.TabStop = false;
+            this.platform6.Tag = "platform";
             // 
-            // movingBlockX
+            // skyPlatform2
             // 
-            this.movingBlockX.BackColor = System.Drawing.Color.Transparent;
-            this.movingBlockX.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
-            this.movingBlockX.Location = new System.Drawing.Point(960, 173);
-            this.movingBlockX.Name = "movingBlockX";
-            this.movingBlockX.Size = new System.Drawing.Size(125, 34);
-            this.movingBlockX.TabIndex = 15;
-            this.movingBlockX.TabStop = false;
-            this.movingBlockX.Tag = "platform";
+            this.skyPlatform2.BackColor = System.Drawing.Color.Transparent;
+            this.skyPlatform2.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
+            this.skyPlatform2.Location = new System.Drawing.Point(960, 173);
+            this.skyPlatform2.Name = "skyPlatform2";
+            this.skyPlatform2.Size = new System.Drawing.Size(125, 34);
+            this.skyPlatform2.TabIndex = 15;
+            this.skyPlatform2.TabStop = false;
+            this.skyPlatform2.Tag = "platform";
             // 
-            // pictureBox14
+            // skyPlatform1
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox14.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
-            this.pictureBox14.Location = new System.Drawing.Point(1143, 225);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(125, 34);
-            this.pictureBox14.TabIndex = 15;
-            this.pictureBox14.TabStop = false;
-            this.pictureBox14.Tag = "platform";
+            this.skyPlatform1.BackColor = System.Drawing.Color.Transparent;
+            this.skyPlatform1.BackgroundImage = global::ProjectJump_.Properties.Resources.platformInTheSky;
+            this.skyPlatform1.Location = new System.Drawing.Point(1143, 225);
+            this.skyPlatform1.Name = "skyPlatform1";
+            this.skyPlatform1.Size = new System.Drawing.Size(125, 34);
+            this.skyPlatform1.TabIndex = 15;
+            this.skyPlatform1.TabStop = false;
+            this.skyPlatform1.Tag = "platform";
             // 
             // enemyOne
             // 
@@ -284,11 +268,7 @@
             this.lblScore.AutoSize = true;
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Source Serif Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-<<<<<<< HEAD
             this.lblScore.Location = new System.Drawing.Point(0, 0);
-=======
-            this.lblScore.Location = new System.Drawing.Point(2, 0);
->>>>>>> origin/master
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(80, 28);
             this.lblScore.TabIndex = 20;
@@ -296,6 +276,7 @@
             // 
             // lava
             // 
+            this.lava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lava.Image = ((System.Drawing.Image)(resources.GetObject("lava.Image")));
             this.lava.Location = new System.Drawing.Point(222, 635);
             this.lava.Name = "lava";
@@ -304,71 +285,73 @@
             this.lava.TabIndex = 21;
             this.lava.TabStop = false;
             // 
-            // pictureBox11
+            // wall2
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
-            this.pictureBox11.Location = new System.Drawing.Point(720, 67);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(32, 100);
-            this.pictureBox11.TabIndex = 9;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Tag = "platform";
+            this.wall2.BackColor = System.Drawing.Color.Transparent;
+            this.wall2.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
+            this.wall2.Location = new System.Drawing.Point(720, 67);
+            this.wall2.Name = "wall2";
+            this.wall2.Size = new System.Drawing.Size(32, 100);
+            this.wall2.TabIndex = 9;
+            this.wall2.TabStop = false;
+            this.wall2.Tag = "platform";
             // 
-            // pictureBox12
+            // wall3
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
-            this.pictureBox12.Location = new System.Drawing.Point(570, 134);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(32, 33);
-            this.pictureBox12.TabIndex = 9;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Tag = "platform";
+            this.wall3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.wall3.BackColor = System.Drawing.Color.Transparent;
+            this.wall3.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
+            this.wall3.Location = new System.Drawing.Point(570, 134);
+            this.wall3.Name = "wall3";
+            this.wall3.Size = new System.Drawing.Size(32, 33);
+            this.wall3.TabIndex = 9;
+            this.wall3.TabStop = false;
+            this.wall3.Tag = "platform";
             // 
-            // pictureBox15
+            // wall4
             // 
-            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox15.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
-            this.pictureBox15.Location = new System.Drawing.Point(426, 108);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(32, 59);
-            this.pictureBox15.TabIndex = 9;
-            this.pictureBox15.TabStop = false;
-            this.pictureBox15.Tag = "platform";
+            this.wall4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.wall4.BackColor = System.Drawing.Color.Transparent;
+            this.wall4.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
+            this.wall4.Location = new System.Drawing.Point(426, 108);
+            this.wall4.Name = "wall4";
+            this.wall4.Size = new System.Drawing.Size(32, 59);
+            this.wall4.TabIndex = 9;
+            this.wall4.TabStop = false;
+            this.wall4.Tag = "platform";
             // 
-            // pictureBox16
+            // platform4
             // 
-            this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox16.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
-            this.pictureBox16.Location = new System.Drawing.Point(861, 362);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox16.TabIndex = 14;
-            this.pictureBox16.TabStop = false;
-            this.pictureBox16.Tag = "platform";
+            this.platform4.BackColor = System.Drawing.Color.Transparent;
+            this.platform4.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
+            this.platform4.Location = new System.Drawing.Point(861, 362);
+            this.platform4.Name = "platform4";
+            this.platform4.Size = new System.Drawing.Size(40, 40);
+            this.platform4.TabIndex = 14;
+            this.platform4.TabStop = false;
+            this.platform4.Tag = "platform";
             // 
-            // pictureBox2
+            // platform5
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
-            this.pictureBox2.Location = new System.Drawing.Point(993, 451);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "platform";
+            this.platform5.BackColor = System.Drawing.Color.Transparent;
+            this.platform5.BackgroundImage = global::ProjectJump_.Properties.Resources.platform;
+            this.platform5.Location = new System.Drawing.Point(993, 451);
+            this.platform5.Name = "platform5";
+            this.platform5.Size = new System.Drawing.Size(40, 40);
+            this.platform5.TabIndex = 14;
+            this.platform5.TabStop = false;
+            this.platform5.Tag = "platform";
             // 
-            // pictureBox4
+            // wall1
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
-            this.pictureBox4.Location = new System.Drawing.Point(869, 108);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(32, 59);
-            this.pictureBox4.TabIndex = 22;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Tag = "platform";
+            this.wall1.BackColor = System.Drawing.Color.Transparent;
+            this.wall1.BackgroundImage = global::ProjectJump_.Properties.Resources.wall;
+            this.wall1.Location = new System.Drawing.Point(869, 108);
+            this.wall1.Name = "wall1";
+            this.wall1.Size = new System.Drawing.Size(32, 59);
+            this.wall1.TabIndex = 22;
+            this.wall1.TabStop = false;
+            this.wall1.Tag = "platform";
             // 
             // Form1
             // 
@@ -376,31 +359,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1482, 653);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.wall1);
             this.Controls.Add(this.lava);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.enemyOne);
             this.Controls.Add(this.key);
-            this.Controls.Add(this.pictureBox15);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox11);
-<<<<<<< HEAD
+            this.Controls.Add(this.wall4);
+            this.Controls.Add(this.wall3);
+            this.Controls.Add(this.wall2);
             this.Controls.Add(this.platform1);
-=======
-            this.Controls.Add(this.pictureBox8);
->>>>>>> origin/master
             this.Controls.Add(this.enemyOnePlatform);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.platform6);
+            this.Controls.Add(this.skyPlatform3);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.movingBlockY);
-            this.Controls.Add(this.pictureBox14);
-            this.Controls.Add(this.movingBlockX);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.platform7);
+            this.Controls.Add(this.skyPlatform1);
+            this.Controls.Add(this.skyPlatform2);
+            this.Controls.Add(this.platform5);
+            this.Controls.Add(this.platform4);
+            this.Controls.Add(this.platform3);
             this.Controls.Add(this.pbDoor);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.skyDoorPlatform);
             this.Controls.Add(this.pbPlayer);
             this.Controls.Add(this.floor);
             this.Controls.Add(this.background);
@@ -411,27 +390,27 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.platform1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyOnePlatform)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyPlatform3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movingBlockY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDoor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyDoorPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.floor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.key)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movingBlockX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyPlatform2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skyPlatform1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lava)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.platform5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wall1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,27 +420,27 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox platform1;
         private PictureBox enemyOnePlatform;
-        private PictureBox pictureBox6;
+        private PictureBox skyPlatform3;
         private PictureBox pictureBox5;
-        private PictureBox movingBlockY;
-        private PictureBox pictureBox3;
+        private PictureBox platform7;
+        private PictureBox platform3;
         private PictureBox pbDoor;
-        private PictureBox pictureBox1;
+        private PictureBox skyDoorPlatform;
         private PictureBox pbPlayer;
         private PictureBox floor;
         private PictureBox background;
         private PictureBox key;
-        private PictureBox pictureBox10;
-        private PictureBox movingBlockX;
-        private PictureBox pictureBox14;
+        private PictureBox platform6;
+        private PictureBox skyPlatform2;
+        private PictureBox skyPlatform1;
         private PictureBox enemyOne;
         private Label lblScore;
         private PictureBox lava;
-        private PictureBox pictureBox11;
-        private PictureBox pictureBox12;
-        private PictureBox pictureBox15;
-        private PictureBox pictureBox16;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox4;
+        private PictureBox wall2;
+        private PictureBox wall3;
+        private PictureBox wall4;
+        private PictureBox platform4;
+        private PictureBox platform5;
+        private PictureBox wall1;
     }
 }
