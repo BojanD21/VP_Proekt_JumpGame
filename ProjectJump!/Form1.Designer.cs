@@ -46,7 +46,7 @@
             this.platform6 = new System.Windows.Forms.PictureBox();
             this.skyPlatform2 = new System.Windows.Forms.PictureBox();
             this.skyPlatform1 = new System.Windows.Forms.PictureBox();
-            this.enemyOne = new System.Windows.Forms.PictureBox();
+            this.enemy = new System.Windows.Forms.PictureBox();
             this.lblScore = new System.Windows.Forms.Label();
             this.lava = new System.Windows.Forms.PictureBox();
             this.wall2 = new System.Windows.Forms.PictureBox();
@@ -70,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.platform6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skyPlatform2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skyPlatform1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lava)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wall3)).BeginInit();
@@ -252,16 +252,16 @@
             this.skyPlatform1.TabStop = false;
             this.skyPlatform1.Tag = "platform";
             // 
-            // enemyOne
+            // enemy
             // 
-            this.enemyOne.BackColor = System.Drawing.Color.Transparent;
-            this.enemyOne.Image = global::ProjectJump_.Properties.Resources.finkiLogo;
-            this.enemyOne.Location = new System.Drawing.Point(581, 361);
-            this.enemyOne.Name = "enemyOne";
-            this.enemyOne.Size = new System.Drawing.Size(50, 50);
-            this.enemyOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.enemyOne.TabIndex = 19;
-            this.enemyOne.TabStop = false;
+            this.enemy.BackColor = System.Drawing.Color.Transparent;
+            this.enemy.Image = global::ProjectJump_.Properties.Resources.finkiLogo;
+            this.enemy.Location = new System.Drawing.Point(581, 361);
+            this.enemy.Name = "enemy";
+            this.enemy.Size = new System.Drawing.Size(50, 50);
+            this.enemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.enemy.TabIndex = 19;
+            this.enemy.TabStop = false;
             // 
             // lblScore
             // 
@@ -362,7 +362,7 @@
             this.Controls.Add(this.wall1);
             this.Controls.Add(this.lava);
             this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.enemyOne);
+            this.Controls.Add(this.enemy);
             this.Controls.Add(this.key);
             this.Controls.Add(this.wall4);
             this.Controls.Add(this.wall3);
@@ -403,7 +403,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.platform6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skyPlatform2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skyPlatform1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemyOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lava)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wall3)).EndInit();
@@ -433,7 +433,7 @@
         private PictureBox platform6;
         private PictureBox skyPlatform2;
         private PictureBox skyPlatform1;
-        private PictureBox enemyOne;
+        private PictureBox enemy;
         private Label lblScore;
         private PictureBox lava;
         private PictureBox wall2;

@@ -9,14 +9,14 @@ namespace ProjectJump_
 
             background.BackColor = Color.Transparent;
             pbPlayer.Parent = background;
-            enemyOne.Parent = background;
+            enemy.Parent = background;
             key.Parent = background;
             lblScore.Parent = background;
 
             pbPlayer.Height = 60;
             pbPlayer.Width = 40;
-            pbPlayer.Left = 40;
-            pbPlayer.Top = 575;
+            pbPlayer.Left = floor.Left + 50;
+            pbPlayer.Top = floor.Top - pbPlayer.Height;
 
             background.Dock = DockStyle.Fill;
             background.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
@@ -28,6 +28,10 @@ namespace ProjectJump_
 
             floor.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
             lava.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+
+            
+            this.MinimumSize = new Size(0, this.Height);
+            this.MaximumSize = new Size(Int32.MaxValue, this.Height);
 
 
             setSizes(platform1, 125, 34);
@@ -47,6 +51,8 @@ namespace ProjectJump_
             setSizes(wall2, 32, 100);
             setSizes(wall3, 32, 33);
             setSizes(wall4, 32, 59);
+
+            setSizes(pbDoor, 75, 100);
         }
 
         public void setSizes(Control x, int width, int height)
@@ -66,7 +72,6 @@ namespace ProjectJump_
 
         public bool up = true;
         public bool right = false;
-        public bool down = false;
         public bool left = false;
         public bool isFalling = false;
         public bool onThisPlatform = false;
@@ -142,52 +147,64 @@ namespace ProjectJump_
         public void gameOver(String str)
         {
             timer1.Stop();
-            upIsDown = false;
-            pbPlayer.Left = floor.Left + 50;
-            pbPlayer.Top = floor.Top - pbPlayer.Height - 20;
-            right = false;
-            left = false;
             MessageBox.Show(str);
-            hasKey = false;
-            shownNoKeyMessage = true;
-            key.Visible = true;
-            enemyOne.Left = 580;
-            pbPlayer.Left = 40;
-            pbPlayer.Top = 575;
-            scoreCounter = 0;
-            time = 0; 
-            lblScore.Text = "Time: " + time;
-            gravity = 0;
-            timer1.Start();
-            up = true;
+            DontPlayAgain dontPlayAgain = new DontPlayAgain();
+            if(dontPlayAgain.ShowDialog() == DialogResult.OK)
+            {
+                upIsDown = false;
+                pbPlayer.Left = floor.Left + 50;
+                pbPlayer.Top = floor.Top - pbPlayer.Height;
+                right = false;
+                left = false;
+                hasKey = false;
+                shownNoKeyMessage = true;
+                key.Visible = true;
+                enemy.Left = 580;
+                scoreCounter = 0;
+                time = 0;
+                lblScore.Text = "Time: " + time;
+                gravity = 0;
+                timer1.Start();
+                up = true;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         public void gameWon()
         {
             timer1.Stop();
-            upIsDown = false;
-            pbPlayer.Left = floor.Left + 50;
-            pbPlayer.Top = floor.Top - pbPlayer.Height - 20;
-            right = false;
-            left = false;
             MessageBox.Show("Congratulations!!! You won in " + time + " seconds.");
-            hasKey = false;
-            shownNoKeyMessage = true;
-            key.Visible = true;
-            enemyOne.Left = 580;
-            pbPlayer.Left = 40;
-            pbPlayer.Top = 575;
-            scoreCounter = 0;
-            time = 0;
-            lblScore.Text = "Time: " + time;
-            gravity = 0;
-            timer1.Start();
-            up = true;
+            playAgain playAgain = new playAgain();
+            if (playAgain.ShowDialog() == DialogResult.OK)
+            {
+                upIsDown = false;
+                pbPlayer.Left = floor.Left + 50;
+                pbPlayer.Top = floor.Top - pbPlayer.Height;
+                right = false;
+                left = false;
+                hasKey = false;
+                shownNoKeyMessage = true;
+                key.Visible = true;
+                enemy.Left = 580;
+                scoreCounter = 0;
+                time = 0;
+                lblScore.Text = "Time: " + time;
+                gravity = 0;
+                timer1.Start();
+                up = true;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
             scoreCounter += 1;
             if(scoreCounter == 50)
             {
@@ -236,7 +253,7 @@ namespace ProjectJump_
                 }
             }
 
-            if (pbPlayer.Bounds.IntersectsWith(enemyOne.Bounds))
+            if (pbPlayer.Bounds.IntersectsWith(enemy.Bounds))
             {
                 gameOver("You have been crushed by the great FINKI. GAME OVER!");
             }
@@ -353,6 +370,13 @@ namespace ProjectJump_
 
             if (moveOtherSideVertical)
             {
+
+                if (pbPlayer.Bottom == platform7.Top && ((left && pbPlayer.Location.X + pbPlayer.Width <= platform7.Location.X) || (right && pbPlayer.Location.X > platform7.Location.X + platform7.Width)))
+                {
+                    up = true;
+                    gravity = 0;
+                }
+
                 if (platform7.Top >= skyPlatform1.Bottom)
                 {
                     if (pbPlayer.Bottom == platform7.Top && pbPlayer.Right > platform7.Left && pbPlayer.Left < platform7.Right)
@@ -366,6 +390,13 @@ namespace ProjectJump_
             }
             else if (!moveOtherSideVertical)
             {
+
+                if (pbPlayer.Bottom == platform7.Top && ((left && pbPlayer.Location.X + pbPlayer.Width <= platform7.Location.X) || (right && pbPlayer.Location.X > platform7.Location.X + platform7.Width)))
+                {
+                    up = true;
+                    gravity = 0;
+                }
+
                 if (pbPlayer.Bottom == platform7.Top && pbPlayer.Right > platform7.Left && pbPlayer.Left < platform7.Right)
                 {
                     pbPlayer.Top += playerSpeed;
@@ -380,9 +411,9 @@ namespace ProjectJump_
 
             if (enemyGoingLeft)
             {
-                if (enemyOne.Location.X > enemyOnePlatform.Location.X + 5)
+                if (enemy.Location.X > enemyOnePlatform.Location.X + 5)
                 {
-                    enemyOne.Left -= enemySpeed;
+                    enemy.Left -= enemySpeed;
                 }
 
                 else
@@ -393,9 +424,9 @@ namespace ProjectJump_
             }
             else if (!enemyGoingLeft)
             {
-                if (enemyOne.Right < enemyOnePlatform.Right - 5)
+                if (enemy.Right < enemyOnePlatform.Right - 5)
                 {
-                    enemyOne.Left += enemySpeed;
+                    enemy.Left += enemySpeed;
                 }
                 else
                 {
